@@ -558,11 +558,11 @@ print(txt)  # النتيجة: Hello
 #### دوال السلاسل النصية:
 
 | الدالة        | الوصف                                                      |
-|---------------|-------------------------------------------------------------|
-| `capitalize()`| تحويل الحرف الأول إلى حرف كبير                              |
-| `casefold()`  | تحويل السلسلة النصية إلى حروف صغيرة                         |
-| `center()`    | إعادة سلسلة نصية متمركزة                                    |
-| `count()`     | إعادة عدد مرات تكرار قيمة محددة في السلسلة النصية           |
+|---------------|-------------------------------------------------------------------------------------------------------|
+| `capitalize()`|                                                 تحويل الحرف الأول إلى حرف كبير                              |
+| `casefold()`  |                                              تحويل السلسلة النصية إلى حروف صغيرة                         |
+| `center()`    |                                                        إعادة سلسلة نصية متمركزة                                    |
+| `count()`     |                                      إعادة عدد مرات تكرار قيمة محددة في السلسلة النصية           |
 | `encode()`    | إعادة نسخة مشفرة من السلسلة النصية                          |
 | `endswith()`  | إعادة `True` إذا انتهت السلسلة النصية بالقيمة المحددة       |
 | `expandtabs()`| تحديد حجم علامة التبويب في السلسلة النصية                   |
@@ -605,317 +605,147 @@ print(txt)  # النتيجة: Hello
 | `upper()`     | تحويل السلسلة النصية إلى حروف كبيرة                         |
 | `zfill()`     | ملء السلسلة النصية بعدد محدد من القيم 0 في البداية         |
 
-#### أمثلة على استخدام دوال السلاسل النصية:
 
-##### استخدام `capitalize()`:
-```python
-txt = "hello, world!"
-print(txt.capitalize())  # النتيجة: "Hello, world!"
-```
+### قائمة دوال السلاسل النصية في بايثون (Python String Methods)
 
-##### استخدام `casefold()`:
-```python
-txt = "Hello, World!"
-print(txt.casefold())  # النتيجة: "hello, world!"
-```
+1. **طرق تغيير حالة الأحرف:**
 
-##### استخدام `center()`:
-```python
-txt = "Hello"
-print(txt.center(20))  # النتيجة: "       Hello        "
-```
+   هذه الطرق تقوم بتغيير حالة الأحرف في السلسلة النصية.
 
-##### استخدام `count()`:
-```python
-txt = "I love apples, apples are my favorite fruit."
-print(txt.count("apples"))  # النتيجة: 2
-```
+   - `capitalize()`: تحول الحرف الأول إلى حرف كبير.
+   - `upper()`: تحول جميع الأحرف إلى أحرف كبيرة.
+   - `lower()`: تحول جميع الأحرف إلى أحرف صغيرة.
+   - `title()`: تحول الحرف الأول من كل كلمة إلى حرف كبير.
+   - `swapcase()`: تبادل حالة الأحرف: الحروف الصغيرة تصبح كبيرة والعكس صحيح.
 
-##### استخدام `endswith()`:
-```python
-txt = "Hello, world!"
-print(txt.endswith("world!"))  # النتيجة: True
-```
+   مثال:
+   ```python
+   text = "hello WORLD"
+   print(text.capitalize())  # Output: Hello world
+   print(text.upper())       # Output: HELLO WORLD
+   print(text.lower())       # Output: hello world
+   print(text.title())       # Output: Hello World
+   print(text.swapcase())    # Output: HELLO world
+   ```
 
-##### استخدام `find()`:
-```python
-txt = "Hello, world!"
-print(txt.find("world"))  # النتيجة: 7
-```
+2. **طرق البحث والتحقق:**
 
-##### استخدام `replace()`:
-```python
-txt = "I like bananas"
-print(txt.replace("bananas", "apples"))  # النتيجة: "I like apples"
-```
+   هذه الطرق تساعد في البحث عن نصوص معينة أو التحقق من محتوى السلسلة النصية.
 
-##### استخدام `split()`:
-```python
-txt = "Hello, world!"
-print(txt.split(","))  # النتيجة: ['Hello', ' world!']
-```
+   - `startswith()`: تتحقق مما إذا كانت السلسلة تبدأ بنص معين.
+   - `endswith()`: تتحقق مما إذا كانت السلسلة تنتهي بنص معين.
+   - `find()`: تبحث عن نص معين وتعيد موقعه (أو -1 إذا لم يتم العثور عليه).
+   - `index()`: مشابهة لـ `find()`، ولكنها ترفع استثناء إذا لم يتم العثور على النص.
+   - `rfind()`: البحث عن قيمة معينة وإعادة آخر موضع لها.
+   - `rindex()`: البحث عن قيمة معينة وإعادة آخر موضع لها.
 
-##### استخدام `strip()`:
-```python
-txt = "   Hello, world!   "
-print(txt.strip())  # النتيجة: "Hello, world!"
-```
+   مثال:
+   ```python
+   filename = "document.txt"
+   print(filename.startswith("doc"))    # Output: True
+   print(filename.endswith(".pdf"))     # Output: False
+   print(filename.find("ment"))         # Output: 4
+   print(filename.index("txt"))         # Output: 9
+   print(filename.rfind("c"))           # Output: 2
+   print(filename.rindex("c"))          # Output: 2
+   ```
 
+3. **طرق التنسيق والتعديل:**
 
-#### center()
-```python
-txt = "Hello"
-print(txt.center(20))  # النتيجة: "       Hello        "
-```
+   هذه الطرق تساعد في تنسيق وتعديل محتوى السلسلة النصية.
 
-#### count()
-```python
-txt = "I love apples, apples are my favorite fruit."
-print(txt.count("apples"))  # النتيجة: 2
-```
+   - `strip()`: تزيل المسافات والأسطر الجديدة من بداية ونهاية السلسلة.
+   - `lstrip()`: تزيل المسافات من بداية السلسلة.
+   - `rstrip()`: تزيل المسافات من نهاية السلسلة.
+   - `replace()`: تستبدل نصًا بنص آخر.
+   - `split()`: تقسم السلسلة إلى قائمة بناءً على فاصل معين.
+   - `splitlines()`: تقسم السلسلة النصية عند فواصل الأسطر.
+   - `join()`: تدمج عناصر قائمة في سلسلة نصية واحدة.
+   - `zfill()`: ملء السلسلة النصية بعدد محدد من القيم 0 في البداية.
+   - `expandtabs()`: تحديد حجم علامة التبويب في السلسلة النصية.
+   - `center()`: إعادة سلسلة نصية متمركزة.
+   - `ljust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليسار.
+   - `rjust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليمين.
 
-#### encode()
-```python
-txt = "Hello, World!"
-print(txt.encode())  # النتيجة: b'Hello, World!'
-```
+   مثال:
+   ```python
+   text = "  Python is awesome  "
+   print(text.strip())                   # Output: Python is awesome
+   print(text.lstrip())                  # Output: Python is awesome  
+   print(text.rstrip())                  # Output:   Python is awesome
+   print(text.replace("awesome", "great"))  # Output:   Python is great  
+   print("Hello,World".split(","))       # Output: ['Hello', 'World']
+   print("Hello\nWorld".splitlines())    # Output: ['Hello', 'World']
+   print("-".join(["Python", "3", "9"]))  # Output: Python-3-9
+   print("42".zfill(5))                  # Output: 00042
+   print("Hello\tWorld".expandtabs(4))   # Output: Hello   World
+   print("Python".center(10, "*"))       # Output: **Python**
+   print("Python".ljust(10, "-"))        # Output: Python----
+   print("Python".rjust(10, "-"))        # Output: ----Python
+   ```
 
-#### endswith()
-```python
-txt = "Hello, world!"
-print(txt.endswith("world!"))  # النتيجة: True
-```
+4. **طرق التحقق من المحتوى:**
 
-#### expandtabs()
-```python
-txt = "Hello\tWorld"
-print(txt.expandtabs(4))  # النتيجة: "Hello   World"
-```
+   هذه الطرق تساعد في التحقق من نوع المحتوى في السلسلة النصية.
 
-#### find()
-```python
-txt = "Hello, world!"
-print(txt.find("world"))  # النتيجة: 7
-```
+   - `isalpha()`: تتحقق مما إذا كانت جميع الأحرف أبجدية.
+   - `isdigit()`: تتحقق مما إذا كانت جميع الأحرف أرقامًا.
+   - `isalnum()`: تتحقق مما إذا كانت جميع الأحرف أبجدية رقمية.
+   - `islower()`: تتحقق مما إذا كانت جميع الأحرف صغيرة.
+   - `isupper()`: تتحقق مما إذا كانت جميع الأحرف كبيرة.
+   - `isascii()`: تتحقق مما إذا كانت جميع الأحرف أحرف ASCII.
+   - `isdecimal()`: تتحقق مما إذا كانت جميع الأحرف أرقام عشرية.
+   - `isnumeric()`: تتحقق مما إذا كانت جميع الأحرف أرقام.
+   - `isidentifier()`: تتحقق مما إذا كانت السلسلة النصية معرفًا صالحًا.
+   - `isprintable()`: تتحقق مما إذا كانت جميع الأحرف قابلة للطباعة.
+   - `isspace()`: تتحقق مما إذا كانت جميع الأحرف مسافات.
+   - `istitle()`: تتحقق مما إذا كانت السلسلة النصية تتبع قواعد العنوان.
 
-#### format()
-```python
-age = 36
-txt = "My name is John, and I am {} years old."
-print(txt.format(age))  # النتيجة: "My name is John, and I am 36 years old."
-```
+   مثال:
+   ```python
+   print("abc".isalpha())    # Output: True
+   print("123".isdigit())    # Output: True
+   print("abc123".isalnum()) # Output: True
+   print("abc".islower())    # Output: True
+   print("ABC".isupper())    # Output: True
+   print("Hello".isascii())  # Output: True
+   print("12345".isdecimal())# Output: True
+   print("12345".isnumeric())# Output: True
+   print("myVar".isidentifier())  # Output: True
+   print("Hello, World!".isprintable())  # Output: True
+   print("   ".isspace())    # Output: True
+   print("Hello World".istitle()) # Output: True
+   ```
 
-#### format_map()
-```python
-person = {'name': 'John', 'age': 36}
-txt = "My name is {name}, and I am {age} years old."
-print(txt.format_map(person))  # النتيجة: "My name is John, and I am 36 years old."
-```
+5. **طرق التنسيق والتعديل المتقدمة:**
 
-#### index()
-```python
-txt = "Hello, world!"
-print(txt.index("world"))  # النتيجة: 7
-```
+   هذه الطرق تساعد في تنسيق وتعديل محتوى السلسلة النصية بشكل متقدم.
 
-#### isalnum()
-```python
-txt = "Hello123"
-print(txt.isalnum())  # النتيجة: True
-```
+   - `format()`: تنسيق القيم المحددة في السلسلة النصية.
+   - `format_map()`: تنسيق القيم المحددة في السلسلة النصية باستخدام خريطة.
+   - `maketrans()`: إعادة جدول ترجمة لاستخدامه في الترجمات.
+   - `translate()`: إعادة سلسلة نصية مترجمة.
+   - `partition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية.
+   - `rpartition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية من النهاية.
 
-#### isalpha()
-```python
-txt = "Hello"
-print(txt.isalpha())  # النتيجة: True
-```
+   مثال:
+   ```python
+   age = 36
+   txt = "My name is John, I am {}"
+   print(txt.format(age))  # Output: My name is John, I am 36
 
-#### isascii()
-```python
-txt = "Hello"
-print(txt.isascii())  # النتيجة: True
-```
+   person = {'name': 'John', 'age': 36}
+   txt = "My name is {name}, I am {age}"
+   print(txt.format_map(person))  # Output: My name is John, I am 36
 
-#### isdecimal()
-```python
-txt = "12345"
-print(txt.isdecimal())  # النتيجة: True
-```
+   txt = "Hello, World!"
+   trans = txt.maketrans("H", "J")
+   print(txt.translate(trans))  # Output: Jello, World!
 
-#### isdigit()
-```python
-txt = "12345"
-print(txt.isdigit())  # النتيجة: True
-```
+   txt = "I could eat bananas all day"
+   print(txt.partition("bananas"))  # Output: ('I could eat ', 'bananas', ' all day')
+   print(txt.rpartition("bananas")) # Output: ('I could eat ', 'bananas', ' all day')
+   ```
 
-#### isidentifier()
-```python
-txt = "myVariable"
-print(txt.isidentifier())  # النتيجة: True
-```
-
-#### islower()
-```python
-txt = "hello"
-print(txt.islower())  # النتيجة: True
-```
-
-#### isnumeric()
-```python
-txt = "12345"
-print(txt.isnumeric())  # النتيجة: True
-```
-
-#### isprintable()
-```python
-txt = "Hello, World!"
-print(txt.isprintable())  # النتيجة: True
-```
-
-#### isspace()
-```python
-txt = "   "
-print(txt.isspace())  # النتيجة: True
-```
-
-#### istitle()
-```python
-txt = "Hello, World!"
-print(txt.istitle())  # النتيجة: True
-```
-
-#### isupper()
-```python
-txt = "HELLO"
-print(txt.isupper())  # النتيجة: True
-```
-
-#### join()
-```python
-my_list = ["Hello", "world"]
-txt = " ".join(my_list)
-print(txt)  # النتيجة: "Hello world"
-```
-
-#### ljust()
-```python
-txt = "Hello"
-print(txt.ljust(10))  # النتيجة: "Hello     "
-```
-
-#### lower()
-```python
-txt = "HELLO"
-print(txt.lower())  # النتيجة: "hello"
-```
-
-#### lstrip()
-```python
-txt = "   Hello"
-print(txt.lstrip())  # النتيجة: "Hello"
-```
-
-#### maketrans() و translate()
-```python
-txt = "Hello, World!"
-trans = txt.maketrans("H", "J")
-print(txt.translate(trans))  # النتيجة: "Jello, World!"
-```
-
-#### partition()
-```python
-txt = "I could eat bananas all day"
-print(txt.partition("bananas"))  # النتيجة: ('I could eat ', 'bananas', ' all day')
-```
-
-#### replace()
-```python
-txt = "I like bananas"
-print(txt.replace("bananas", "apples"))  # النتيجة: "I like apples"
-```
-
-#### rfind()
-```python
-txt = "Hello, world! Welcome to the world!"
-print(txt.rfind("world"))  # النتيجة: 27
-```
-
-#### rindex()
-```python
-txt = "Hello, world! Welcome to the world!"
-print(txt.rindex("world"))  # النتيجة: 27
-```
-
-#### rjust()
-```python
-txt = "Hello"
-print(txt.rjust(10))  # النتيجة: "     Hello"
-```
-
-#### rpartition()
-```python
-txt = "I could eat bananas all day, bananas are my favorite fruit"
-print(txt.rpartition("bananas"))  # النتيجة: ('I could eat bananas all day, ', 'bananas', ' are my favorite fruit')
-```
-
-#### rsplit()
-```python
-txt = "apple, banana, cherry"
-print(txt.rsplit(", "))  # النتيجة: ['apple', 'banana', 'cherry']
-```
-
-#### rstrip()
-```python
-txt = "Hello   "
-print(txt.rstrip())  # النتيجة: "Hello"
-```
-
-#### split()
-```python
-txt = "apple, banana, cherry"
-print(txt.split(", "))  # النتيجة: ['apple', 'banana', 'cherry']
-```
-
-#### splitlines()
-```python
-txt = "Thank you for the music\nWelcome to the jungle"
-print(txt.splitlines())  # النتيجة: ['Thank you for the music', 'Welcome to the jungle']
-```
-
-#### startswith()
-```python
-txt = "Hello, world!"
-print(txt.startswith("Hello"))  # النتيجة: True
-```
-
-#### strip()
-```python
-txt = "   Hello, world!   "
-print(txt.strip())  # النتيجة: "Hello, world!"
-```
-
-#### swapcase()
-```python
-txt = "Hello, World!"
-print(txt.swapcase())  # النتيجة: "hELLO, wORLD!"
-```
-
-#### title()
-```python
-txt = "hello, world!"
-print(txt.title())  # النتيجة: "Hello, World!"
-```
-
-#### upper()
-```python
-txt = "Hello, world!"
-print(txt.upper())  # النتيجة: "HELLO, WORLD!"
-```
-
-#### zfill()
-```python
-txt = "42"
-print(txt.zfill(5))  # النتيجة: "00042"
-```
-
+هذه الطرق تساعدك في التعامل مع السلاسل النصية بشكل فعال في بايثون. تذكر أن السلاسل النصية في بايثون غير قابلة للتغيير (immutable)، لذا فإن هذه الطرق تنشئ دائمًا سلسلة نصية جديدة بدلاً من تعديل السلسلة الأصلية.
 
