@@ -754,7 +754,9 @@ print(txt)  # النتيجة: Hello
 #### طرق تغيير حالة الأحرف (Case Conversion Methods)
 | **الدالة**        | **الوصف**                                               | **مثال**                                                                 |
 |-------------------|----------------------------------------------------------|--------------------------------------------------------------------------|
-| `capitalize()`    | تحويل الحرف الأول إلى حرف كبير                           | ```python<br>text = "hello world"<br>print(text.capitalize())  # Hello world``` |
+| `capitalize()`    | تحويل الحرف الأول إلى حرف كبير                           | ```python
+|                                                                        |     text = "hello world"<br>print(text.capitalize())  # Hello world
+                                                                             ``` |
 | `upper()`         | تحويل جميع الأحرف إلى أحرف كبيرة                          | ```python<br>print(text.upper())  # HELLO WORLD```                       |
 | `lower()`         | تحويل جميع الأحرف إلى أحرف صغيرة                          | ```python<br>print(text.lower())  # hello world```                       |
 | `title()`         | تحويل الحرف الأول من كل كلمة إلى حرف كبير                 | ```python<br>print(text.title())  # Hello World```                       |
