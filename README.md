@@ -606,7 +606,7 @@ print(txt)  # النتيجة: Hello
 | `zfill()`     | ملء السلسلة النصية بعدد محدد من القيم 0 في البداية         |
 
 
-### قائمة دوال السلاسل النصية في بايثون (Python String Methods)
+### طرق التعامل مع السلاسل النصية في بايثون (Python String Methods)
 
 1. **طرق تغيير حالة الأحرف:**
 
@@ -636,8 +636,7 @@ print(txt)  # النتيجة: Hello
    - `endswith()`: تتحقق مما إذا كانت السلسلة تنتهي بنص معين.
    - `find()`: تبحث عن نص معين وتعيد موقعه (أو -1 إذا لم يتم العثور عليه).
    - `index()`: مشابهة لـ `find()`، ولكنها ترفع استثناء إذا لم يتم العثور على النص.
-   - `rfind()`: البحث عن قيمة معينة وإعادة آخر موضع لها.
-   - `rindex()`: البحث عن قيمة معينة وإعادة آخر موضع لها.
+   - `count()`: إعادة عدد مرات تكرار قيمة محددة في السلسلة النصية.
 
    مثال:
    ```python
@@ -646,8 +645,7 @@ print(txt)  # النتيجة: Hello
    print(filename.endswith(".pdf"))     # Output: False
    print(filename.find("ment"))         # Output: 4
    print(filename.index("txt"))         # Output: 9
-   print(filename.rfind("c"))           # Output: 2
-   print(filename.rindex("c"))          # Output: 2
+   print(filename.count("c"))           # Output: 1
    ```
 
 3. **طرق التنسيق والتعديل:**
@@ -655,33 +653,21 @@ print(txt)  # النتيجة: Hello
    هذه الطرق تساعد في تنسيق وتعديل محتوى السلسلة النصية.
 
    - `strip()`: تزيل المسافات والأسطر الجديدة من بداية ونهاية السلسلة.
-   - `lstrip()`: تزيل المسافات من بداية السلسلة.
-   - `rstrip()`: تزيل المسافات من نهاية السلسلة.
    - `replace()`: تستبدل نصًا بنص آخر.
    - `split()`: تقسم السلسلة إلى قائمة بناءً على فاصل معين.
-   - `splitlines()`: تقسم السلسلة النصية عند فواصل الأسطر.
    - `join()`: تدمج عناصر قائمة في سلسلة نصية واحدة.
-   - `zfill()`: ملء السلسلة النصية بعدد محدد من القيم 0 في البداية.
-   - `expandtabs()`: تحديد حجم علامة التبويب في السلسلة النصية.
-   - `center()`: إعادة سلسلة نصية متمركزة.
-   - `ljust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليسار.
-   - `rjust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليمين.
+   - `lstrip()`: إعادة نسخة من السلسلة النصية بعد إزالة الفراغات اليسارية.
+   - `rstrip()`: إعادة نسخة من السلسلة النصية بعد إزالة الفراغات اليمنية.
 
    مثال:
    ```python
    text = "  Python is awesome  "
-   print(text.strip())                   # Output: Python is awesome
-   print(text.lstrip())                  # Output: Python is awesome  
-   print(text.rstrip())                  # Output:   Python is awesome
-   print(text.replace("awesome", "great"))  # Output:   Python is great  
-   print("Hello,World".split(","))       # Output: ['Hello', 'World']
-   print("Hello\nWorld".splitlines())    # Output: ['Hello', 'World']
-   print("-".join(["Python", "3", "9"]))  # Output: Python-3-9
-   print("42".zfill(5))                  # Output: 00042
-   print("Hello\tWorld".expandtabs(4))   # Output: Hello   World
-   print("Python".center(10, "*"))       # Output: **Python**
-   print("Python".ljust(10, "-"))        # Output: Python----
-   print("Python".rjust(10, "-"))        # Output: ----Python
+   print(text.strip())                     # Output: Python is awesome
+   print(text.replace("awesome", "great")) # Output:   Python is great  
+   print("Hello,World".split(","))         # Output: ['Hello', 'World']
+   print("-".join(["Python", "3", "9"]))   # Output: Python-3-9
+   print(text.lstrip())                    # Output: "Python is awesome  "
+   print(text.rstrip())                    # Output: "  Python is awesome"
    ```
 
 4. **طرق التحقق من المحتوى:**
@@ -693,10 +679,7 @@ print(txt)  # النتيجة: Hello
    - `isalnum()`: تتحقق مما إذا كانت جميع الأحرف أبجدية رقمية.
    - `islower()`: تتحقق مما إذا كانت جميع الأحرف صغيرة.
    - `isupper()`: تتحقق مما إذا كانت جميع الأحرف كبيرة.
-   - `isascii()`: تتحقق مما إذا كانت جميع الأحرف أحرف ASCII.
    - `isdecimal()`: تتحقق مما إذا كانت جميع الأحرف أرقام عشرية.
-   - `isnumeric()`: تتحقق مما إذا كانت جميع الأحرف أرقام.
-   - `isidentifier()`: تتحقق مما إذا كانت السلسلة النصية معرفًا صالحًا.
    - `isprintable()`: تتحقق مما إذا كانت جميع الأحرف قابلة للطباعة.
    - `isspace()`: تتحقق مما إذا كانت جميع الأحرف مسافات.
    - `istitle()`: تتحقق مما إذا كانت السلسلة النصية تتبع قواعد العنوان.
@@ -708,44 +691,82 @@ print(txt)  # النتيجة: Hello
    print("abc123".isalnum()) # Output: True
    print("abc".islower())    # Output: True
    print("ABC".isupper())    # Output: True
-   print("Hello".isascii())  # Output: True
    print("12345".isdecimal())# Output: True
-   print("12345".isnumeric())# Output: True
-   print("myVar".isidentifier())  # Output: True
-   print("Hello, World!".isprintable())  # Output: True
+   print("Hello, World!".isprintable()) # Output: True
    print("   ".isspace())    # Output: True
    print("Hello World".istitle()) # Output: True
    ```
 
-5. **طرق التنسيق والتعديل المتقدمة:**
+5. **طرق التشفير والترجمة:**
 
-   هذه الطرق تساعد في تنسيق وتعديل محتوى السلسلة النصية بشكل متقدم.
+   هذه الطرق تساعد في تشفير النصوص وترجمتها.
 
-   - `format()`: تنسيق القيم المحددة في السلسلة النصية.
-   - `format_map()`: تنسيق القيم المحددة في السلسلة النصية باستخدام خريطة.
-   - `maketrans()`: إعادة جدول ترجمة لاستخدامه في الترجمات.
+   - `encode()`: إعادة نسخة مشفرة من السلسلة النصية.
    - `translate()`: إعادة سلسلة نصية مترجمة.
-   - `partition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية.
-   - `rpartition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية من النهاية.
+   - `maketrans()`: إعادة جدول ترجمة لاستخدامه في الترجمات.
 
    مثال:
    ```python
-   age = 36
-   txt = "My name is John, I am {}"
-   print(txt.format(age))  # Output: My name is John, I am 36
-
-   person = {'name': 'John', 'age': 36}
-   txt = "My name is {name}, I am {age}"
-   print(txt.format_map(person))  # Output: My name is John, I am 36
-
-   txt = "Hello, World!"
-   trans = txt.maketrans("H", "J")
-   print(txt.translate(trans))  # Output: Jello, World!
-
-   txt = "I could eat bananas all day"
-   print(txt.partition("bananas"))  # Output: ('I could eat ', 'bananas', ' all day')
-   print(txt.rpartition("bananas")) # Output: ('I could eat ', 'bananas', ' all day')
+   text = "Hello, World!"
+   encoded_text = text.encode()
+   print(encoded_text)  # Output: b'Hello, World!'
+   
+   trans = str.maketrans("H", "J")
+   print(text.translate(trans))  # Output: Jello, World!
    ```
 
-هذه الطرق تساعدك في التعامل مع السلاسل النصية بشكل فعال في بايثون. تذكر أن السلاسل النصية في بايثون غير قابلة للتغيير (immutable)، لذا فإن هذه الطرق تنشئ دائمًا سلسلة نصية جديدة بدلاً من تعديل السلسلة الأصلية.
+6. **طرق المحاذاة:**
 
+   هذه الطرق تساعد في محاذاة النصوص.
+
+   - `center()`: إعادة سلسلة نصية متمركزة.
+   - `ljust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليسار.
+   - `rjust()`: إعادة نسخة من السلسلة النصية بمحاذاة إلى اليمين.
+
+   مثال:
+   ```python
+   text = "Hello"
+   print(text.center(10))  # Output: "  Hello   "
+   print(text.ljust(10))   # Output: "Hello     "
+   print(text.rjust(10))   # Output: "     Hello"
+   ```
+
+7. **طرق التقسيم والتجزئة:**
+
+   هذه الطرق تساعد في تقسيم النصوص إلى أجزاء.
+
+   - `partition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية.
+   - `rpartition()`: إعادة قيمة مكونة من ثلاثة أجزاء حيث تنقسم السلسلة النصية من النهاية.
+   - `splitlines()`: تقسيم السلسلة النصية عند فواصل الأسطر وإعادة قائمة.
+   - `rsplit()`: تقسيم السلسلة النصية عند الفاصل المحدد وإعادة قائمة.
+   - `split()`: تقسيم السلسلة النصية عند الفاصل المحدد وإعادة قائمة.
+
+   مثال:
+   ```python
+   text = "I could eat bananas all day"
+   print(text.partition("bananas"))  # Output: ('I could eat ', 'bananas', ' all day')
+   print(text.rpartition("bananas")) # Output: ('I could eat ', 'bananas', ' all day')
+   print("Hello\nWorld".splitlines()) # Output: ['Hello', 'World']
+   print("apple, banana, cherry".rsplit(", ")) # Output: ['apple', 'banana', 'cherry']
+   print("apple, banana, cherry".split(", "))  # Output: ['apple', 'banana', 'cherry']
+   ```
+
+8. **طرق الحشو:**
+
+   هذه الطرق تساعد في حشو النصوص.
+
+   - `zfill()`: ملء السلسلة النصية بعدد محدد من القيم 0 في البداية.
+   - `expandtabs()`: تحديد حجم علامة التبويب في السلسلة النصية.
+
+   مثال:
+   ```python
+   text = "42"
+   print(text.zfill(5))  # Output: "00042"
+   
+   text_with_tabs = "Hello\tWorld"
+   print(text_with_tabs.expandtabs(4))  # Output: "Hello   World"
+   ```
+
+---
+
+تساعدك هذه الطرق في التعامل مع السلاسل النصية بشكل فعال في بايثون. تذكر أن السلاسل النصية في بايثون غير قابلة للتغيير (immutable)، لذا فإن هذه الطرق تنشئ دائمًا سلسلة نصية جديدة بدلاً من تعديل السلسلة الأصلية.
